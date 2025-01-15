@@ -5,7 +5,7 @@ permissions:
 
 on:
     schedule:
-        - cron: "0 0 * * 1"
+        - cron: "0 8 * * 1"
     workflow_dispatch:
 
 jobs:
@@ -21,10 +21,10 @@ jobs:
             - name: Sync Upstream
               uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
               with:
-                  target_repo_token: ${{ secrets.GITHUB_TOKEN }}
-                  upstream_sync_repo: HackJava/HackJava
-                  upstream_sync_branch: main
-                  target_sync_branch: main
+                  # target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+                  upstream_sync_repo: rustdesk/rustdesk
+                  upstream_sync_branch: master
+                  target_sync_branch: master
                   test_mode: false
 
             - name: Check for Failure
